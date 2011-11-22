@@ -50,7 +50,7 @@
         </div>
     </fieldset>
     <ul class="dnnActions dnnClear">
-        <li><asp:LinkButton ID="SaveButton" runat="server" CssClass="dnnPrimaryAction" ResourceKey="Save" /></li>
+        <li><asp:LinkButton ID="SaveButton" runat="server" CssClass="dnnPrimaryAction" ResourceKey="Save" OnClick="SaveButtonClick" /></li>
         <li><asp:HyperLink runat="server" CssClass="dnnSecondaryAction" NavigateUrl="/" ResourceKey="Cancel" /></li>
     </ul>
 </div>

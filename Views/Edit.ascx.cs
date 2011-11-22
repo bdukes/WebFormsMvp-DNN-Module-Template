@@ -11,14 +11,9 @@
     [PresenterBinding(typeof(EditPresenter))]
     public partial class Edit : ModuleView<EditModel>, IEditView
     {
-        public event EventHandler<SaveClickEventArgs> SaveClick;
+        public event EventHandler<SaveClickEventArgs> SaveClick = (_, __) => { };
 
-        protected override void OnLoad(EventArgs e)
-        {
-            this.SaveButton.Click += SaveButtonClick;
-        }
-
-        public void SaveButtonClick(object sender, EventArgs e)
+        protected void SaveButtonClick(object sender, EventArgs e)
         {
             // validate the page
             if (!Page.IsValid)
@@ -31,16 +26,7 @@
             };
 
             // send over to the presenter
-            if (SaveClick != null)
-            {
-                SaveClick(this, args);
-            }
-
-            // alter the view based on the updated model
-            if (this.Model.Success)
-            {
-                Skin.AddModuleMessage(this, "Success!!", this.Model.Message, ModuleMessage.ModuleMessageType.GreenSuccess);
-            }
+            SaveClick(this, args);
         }
     }
 }
