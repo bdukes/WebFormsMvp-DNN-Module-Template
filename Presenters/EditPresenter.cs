@@ -1,5 +1,6 @@
 ﻿namespace $Namespace$$safeprojectname$.Presenters
 {
+    using DotNetNuke.UI.Skins.Controls;
     using DotNetNuke.Web.Mvp;
     using Models;
     using Views;
@@ -16,8 +17,7 @@
             // pluck properties from args (save in database?)
 
             // update the view's model as appropriate (success or error message?)
-            this.View.Model.Success = true;
-            this.View.Model.Message = LocalizeString("Success.Text");
+	    this.ShowMessage(LocalizeString("Success.Text"), ModuleMessage.ModuleMessageType.GreenSuccess);
         }
     }
 }
