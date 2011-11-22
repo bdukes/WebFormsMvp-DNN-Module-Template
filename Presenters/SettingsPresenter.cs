@@ -26,6 +26,11 @@
 
         private void SaveSettings(object sender, Views.SaveSettingsEventArgs eventArgs)
         {
+            if (!eventArgs.IsValid)
+            {
+                return;
+            }
+            
             var moduleController = new ModuleController();
             moduleController.UpdateModuleSetting(this.ModuleId, "Name", eventArgs.Name);
             moduleController.UpdateModuleSetting(this.ModuleId, "Description", eventArgs.Description);
