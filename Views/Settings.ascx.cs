@@ -10,39 +10,19 @@
     [PresenterBinding(typeof(SettingsPresenter))]
     public partial class Settings : ModuleView<SettingsModel>, ISettingsView, ISettingsControl
     {
-        public event EventHandler GetSettings;
-        public event EventHandler SaveSettings;
+        public event EventHandler GetSettings = (_, __) => { };
+        public event EventHandler<SaveSettingsEventArgs> SaveSettings = (_, __) => { };
 
         public void LoadSettings()
         {
-            // ensure the event is wired up before proceeding
-            if (this.GetSettings == null)
-                return;
-
             // defer to presenter to set the model with any needed information
-            GetSettings(this, null);
-
-            // update the view based on our model
-            this.DescriptionTextBox.Text = this.Model.Description;
-            this.NameTextBox.Text = this.Model.Title;
+            GetSettings(this, EventArgs.Empty);
         }
 
         public void UpdateSettings()
         {
-            // validate the page
-            if (!Page.IsValid)
-                return;
-
-            // pull the values out of the form
-            this.Model.Description = this.DescriptionTextBox.Text;
-            this.Model.Title = this.NameTextBox.Text;
-
-            // ensure the event is wired up before proceeding
-            if (this.SaveSettings == null)
-                return;
-
             // defer to the presenter to update the database based on our model
-            SaveSettings(this, null);
+            SaveSettings(this, new SaveSettingsEventArgs(this.Page.IsValid, this.NameTextBox.Text, this.DescriptionTextBox.Text));
         }
     }
 }

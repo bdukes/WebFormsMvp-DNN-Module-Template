@@ -80,6 +80,7 @@
     </Compile>
     <Compile Include="Views\IEditView.cs" />
     <Compile Include="Views\IViewView.cs" />
+    <Compile Include="Views\SaveSettingsEventArgs.cs" />
     <Compile Include="Views\Settings.ascx.cs">
       <DependentUpon>Settings.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

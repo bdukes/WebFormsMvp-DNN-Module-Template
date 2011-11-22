@@ -84,6 +84,7 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="IEditView.cs">IEditView.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="ISettingsView.cs">ISettingsView.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="IViewView.cs">IViewView.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="SaveSettingsEventArgs.cs">SaveSettingsEventArgs.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="Settings.ascx">Settings.ascx</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="Settings.ascx.cs">Settings.ascx.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="Settings.ascx.designer.cs">Settings.ascx.designer.cs</ProjectItem>

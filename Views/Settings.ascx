@@ -17,12 +17,12 @@
     <fieldset>
         <div class="dnnFormItem">
             <dnn:Label runat="server" ControlName="NameTextBox" ResourceKey="Name" />
-            <asp:TextBox runat="server" ID="NameTextBox" CssClass="dnnFormRequired" />
+            <asp:TextBox runat="server" ID="NameTextBox" CssClass="dnnFormRequired" Text="<%# Model.Name %>" />
             <asp:RequiredFieldValidator runat="server" ControlToValidate="NameTextBox" CssClass="dnnFormMessage dnnFormError" ResourceKey="Name.Required" />
         </div>
         <div class="dnnFormItem">
             <dnn:Label runat="server" ControlName="DescriptionTextBox" ResourceKey="Description" />
-            <asp:TextBox runat="server" TextMode="MultiLine" ID="DescriptionTextBox" />
+            <asp:TextBox runat="server" TextMode="MultiLine" ID="DescriptionTextBox" Text="<%# Model.Description %>" />
         </div>
         <div class="dnnFormItem">
             <dnn:Label runat="server" ControlName="ChoiceDropDown" ResourceKey="Choice" />

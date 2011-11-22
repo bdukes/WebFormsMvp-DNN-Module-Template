@@ -20,15 +20,15 @@
 
         private void GetSettings(object sender, EventArgs eventArgs)
         {
+            View.Model.Name = GetSetting("Name");
             View.Model.Description = GetSetting("Description");
-            View.Model.Title = GetSetting("Title");
         }
 
-        private void SaveSettings(object sender, EventArgs eventArgs)
+        private void SaveSettings(object sender, Views.SaveSettingsEventArgs eventArgs)
         {
             var moduleController = new ModuleController();
-            moduleController.UpdateModuleSetting(this.ModuleId, "Description", this.View.Model.Description);
-            moduleController.UpdateModuleSetting(this.ModuleId, "Title", this.View.Model.Title);
+            moduleController.UpdateModuleSetting(this.ModuleId, "Name", eventArgs.Name);
+            moduleController.UpdateModuleSetting(this.ModuleId, "Description", eventArgs.Description);
         }
 
         private string GetSetting(string settingKey)

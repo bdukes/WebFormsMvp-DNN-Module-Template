@@ -6,6 +6,6 @@ namespace $Namespace$$safeprojectname$.Views
     public interface ISettingsView : IModuleView<Models.SettingsModel>
     {
         event EventHandler GetSettings;
-        event EventHandler SaveSettings;
+        event EventHandler<SaveSettingsEventArgs> SaveSettings;
     }
 }
